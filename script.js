@@ -172,9 +172,16 @@ function openModal() {
   document.getElementById("musicModal").hidden = false;
   document.querySelector('#musicForm input[name="title"]').focus();
 }
+function closeAllModals() {
+  document.getElementById("musicModal").hidden = true;
+  document.getElementById("helpModal").hidden = true;
+  document.getElementById("exportModal").hidden = true;
+  document.getElementById("overlay").hidden = true;
+}
+
 function closeModal() {
   document.getElementById("musicModal").hidden = true;
-  if (document.getElementById("helpModal").hidden && document.getElementById("exportModal").hidden) document.getElementById("overlay").hidden = true;
+  document.getElementById("overlay").hidden = true;
   document.getElementById("musicForm").reset();
 }
 function openHelp() {
@@ -183,7 +190,7 @@ function openHelp() {
 }
 function closeHelp() {
   document.getElementById("helpModal").hidden = true;
-  if (document.getElementById("musicModal").hidden && document.getElementById("exportModal").hidden) document.getElementById("overlay").hidden = true;
+  document.getElementById("overlay").hidden = true;
 }
 function openExport() {
   document.getElementById("overlay").hidden = false;
@@ -191,7 +198,7 @@ function openExport() {
 }
 function closeExport() {
   document.getElementById("exportModal").hidden = true;
-  if (document.getElementById("musicModal").hidden && document.getElementById("helpModal").hidden) document.getElementById("overlay").hidden = true;
+  document.getElementById("overlay").hidden = true;
 }
 
 document.getElementById("musicForm").addEventListener("submit", event => {
@@ -283,7 +290,7 @@ function toggleSidebar() {
   document.querySelector(".sidebar").classList.toggle("open");
 }
 document.getElementById("overlay").addEventListener("click", () => {
-  closeModal(); closeHelp(); closeExport();
+  closeAllModals();
   document.querySelector(".sidebar").classList.remove("open");
 });
 

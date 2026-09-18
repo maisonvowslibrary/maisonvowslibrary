@@ -150,6 +150,7 @@ select, .filter-btn {
 .footer { border-top:1px solid var(--line); padding:19px 50px 30px; color:var(--muted); font-size:11px; display:flex; justify-content:space-between; gap:12px; }
 .footer button { border:0; background:transparent; padding:0; color:var(--accent-2); cursor:pointer; font-weight:700; }
 .overlay { position:fixed; inset:0; background:rgba(3,5,9,.64); backdrop-filter:blur(5px); z-index:20; }
+.modal[hidden], .overlay[hidden] { display:none !important; }
 .modal { position:fixed; inset:0; z-index:21; display:grid; place-items:center; padding:18px; }
 .modal-card { width:min(700px, 100%); max-height:90vh; overflow:auto; background:var(--panel); border:1px solid var(--line); border-radius:20px; box-shadow:0 30px 90px rgba(0,0,0,.42); padding:24px; }
 .modal-card.small { width:min(500px,100%); }
